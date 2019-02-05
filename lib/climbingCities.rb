@@ -1,6 +1,9 @@
-require "climbingCities/version"
+# This was environment file and environment file was created/setup in more convenient file under config.
 
-module ClimbingCities
-  class Error < StandardError; end
-  # Your code goes here...
-end
+
+# require "climbingCities/version"
+
+# module ClimbingCities
+#   class Error < StandardError; end
+#   # Your code goes here...
+# end
