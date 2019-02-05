@@ -19,10 +19,26 @@ class climbingCities::CLI
   end 
   
   def menu
-    
+    input = nil
+    while input != "quit"
+      puts " "
+      puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter or list to see the list of cities again or type quit to exit."
+      puts " "
+      input = gets.strip.downcase  #get user input
+        if input.to_i > 0 && input.to_i < 18
+          # city = city info.
+          puts " "
+          # add any other information
+          submenu
+        elsif input == "list"
+          list_cities
+        else 
+          goodbye
+        end  
+    end    
   end   
   
-  # print submenu
+  # print continue or exit message
   def submenu
     inputted = nil
     puts " "
@@ -39,7 +55,7 @@ class climbingCities::CLI
     end   
   end
   
-  
+  # print exit message
   def goodbye
     puts " "
     puts "Thank you! Have a nice day and come back soon."
