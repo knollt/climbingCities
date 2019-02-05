@@ -22,8 +22,29 @@ class climbingCities::CLI
     
   end   
   
+  # print submenu
+  def submenu
+    inputted = nil
+    puts " "
+    puts "Would you like to see another city? Enter Y or N."
+    puts " "
+    inputted = gets.strip.downcase
+    if inputted == "y" || "Y"
+      list_cities
+    elsif inputted == "n" || "N"
+      goodbye
+    else 
+      puts "I don't understand your answer."
+      submenu
+    end   
+  end
+  
   
   def goodbye
-    
+    puts " "
+    puts "Thank you! Have a nice day and come back soon."
+    puts " "
   end   
+  
+     
 end  
