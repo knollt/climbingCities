@@ -18,6 +18,7 @@ class climbingCities::CLI
     # produce list of cities from scrape
   end 
   
+  # print city information
   def menu
     input = nil
     while input != "quit"
