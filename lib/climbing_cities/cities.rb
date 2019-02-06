@@ -1,22 +1,22 @@
 class ClimbingCities::Cities
   
-  # # create reader/writer methods/attributes or properties for each climbing city 
-  # attr_accessor :name, :location
+  # create reader/writer methods/attributes or properties for each climbing city 
+  attr_accessor :name, :location
   
   
-  # @@all = []
+  @@all = []
   
   
-  # # initialize a city instance with properties and add to @@all array
-  # def initialize (name, location)
-  #   @name = name
-  #   @location = location
-  #   @@all << self 
-  # end
+  # initialize a city instance with properties and add to @@all array
+  def initialize (name, location)
+    @name = name
+    @location = location
+    @@all << self 
+  end
   
-  # # call all city objects
-  # def self.all
-  #   @@all  
-  # end 
+  # call all city objects
+  def self.all
+    @@all  
+  end 
   
 end   
