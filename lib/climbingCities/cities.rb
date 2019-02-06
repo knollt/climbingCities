@@ -1,4 +1,4 @@
-class climbingCities::Cities
+class ClimbingCities::Cities
   
   # create reader/writer methods/attributes or properties for each climbing city 
   attr_accessor :name, :location

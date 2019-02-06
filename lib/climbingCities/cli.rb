@@ -1,4 +1,4 @@
-class climbingCities::CLI
+class ClimbingCities::CLI
   
   # start a new CLI session 
   def call 

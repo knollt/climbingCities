@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 
+puts "Hello World"
+
 require "bundler/setup"
 require_relative "../config/environment"
 
 # Creates a new instance of CLI controller, calls the call method on it, which launches the user experience/interface.
 
-climbingCities::CLI.new.call
+ClimbingCities::CLI.new.call
