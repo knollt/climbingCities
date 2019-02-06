@@ -46,7 +46,10 @@ class ClimbingCities::Scraper
        when i == 15
          city[16]
        when i == 16
-         city[17]         
+         city[17] 
+       else 
+         puts "Invalid number. Please enter 1-17."
+       end    
     end  
   end 
   

@@ -15,8 +15,11 @@ class ClimbingCities::CLI
     puts "Welcome climbing enthusiast."
     puts "Where would you like to explore today?"
     puts " "
-    @city = ClimbingCities::Cities.all # load all city objects
-    # produce list of cities from scrape
+    # @city = ClimbingCities::Cities.all # load all city objects
+    # # produce list of cities
+    # @city.each.with_index(1) do |city,i|
+    #   puts "#{i}. #{city.name}"
+    # end  
   end 
   
   # print city information
