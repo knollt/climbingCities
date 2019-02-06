@@ -1,6 +1,6 @@
 # This was environment file and environment file was created/setup in more convenient file under config.
 
 
-require "climbingCities/version"
+require_relative "climbing_cities/version.rb"
 
-require_relative "..lib/climbingCities/cli"
+require_relative "climbing_cities/cli.rb"
