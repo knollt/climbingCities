@@ -1,9 +1,7 @@
 class ClimbingCities::CLI
   
   # start a new CLI session 
-  def call 
-    # call scrape
-    puts "hi you just called me"
+  def call
     list_cities
     menu
   end   
@@ -15,11 +13,11 @@ class ClimbingCities::CLI
     puts "Welcome climbing enthusiast."
     puts "Where would you like to explore today?"
     puts " "
-    # @city = ClimbingCities::Cities.all # load all city objects
-    # # produce list of cities
-    # @city.each.with_index(1) do |city,i|
-    #   puts "#{i}. #{city.name}"
-    # end  
+    # produce list of cities
+    @city = ClimbingCities::Scraper.today
+    
+    
+    
   end 
   
   # print city information
