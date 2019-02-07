@@ -5,8 +5,9 @@ attr_accessor :name, :desc
   # initiate the scrape  
   def self.today
     # should return bunch of instances of cities
-    puts "1. Turkey"
-    puts "2. Oregon "
+    # puts "1. Turkey"
+    # puts "2. Oregon "
+    binding.pry
     
     city_1 = self.new
     city_1.name = "1. Turkey"

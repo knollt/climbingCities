@@ -4,7 +4,7 @@ class ClimbingCities::CLI
   def call
     list_cities
     menu
-    # goodbye
+    goodbye
   end   
   
   
@@ -25,9 +25,9 @@ class ClimbingCities::CLI
   # print city information
   def menu
     input = nil
-    while input != "quit"
+    while input != "exit"
       puts " "
-      puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter or list to see the list of cities again or type quit to exit."
+      puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter or type list to see the list of cities again or type exit."
       puts " "
       input = gets.strip.downcase  #get user input
         case input 
@@ -45,8 +45,8 @@ class ClimbingCities::CLI
             submenu
           elsif input == "list"
             list_cities
-          else input == "quit"
-            goodbye
+          else input == "exit"
+            # goodbye
           end   
         end  
     end    
@@ -61,7 +61,7 @@ class ClimbingCities::CLI
     inputted = gets.strip.downcase
     if inputted == "y" || inputted == "Y"
       list_cities
-    elsif inputted == "n" || inputted == "N" # ISSUE prints "please enter # of city" still need to input = quit to exit
+    elsif inputted == "n" || inputted == "N" # ISSUE prints "please enter # of city" still need to input = exit to exit
       goodbye
     else 
       puts "I don't understand your answer."
