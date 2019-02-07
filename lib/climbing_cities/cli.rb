@@ -29,10 +29,17 @@ class ClimbingCities::CLI
       puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter or list to see the list of cities again or type quit to exit."
       puts " "
       input = gets.strip.downcase  #get user input
-        if input.to_i 
-          # city = city info.
-          puts " 1234"
-          # add any other information
+        if input.to_i > 0 && input.to_i < 18
+          city = @city[input.to_i-1]
+            puts " "
+            puts " 1234"
+            puts " "
+            # case city
+            #   when "1"
+            #     puts "1. Turkey climb"
+            #   when "2"
+            #     puts "2. Oregon boulders"
+            # end   
           submenu
         elsif input == "list"
           list_cities
@@ -49,9 +56,9 @@ class ClimbingCities::CLI
     puts "Would you like to see another city? Enter Y or N."
     puts " "
     inputted = gets.strip.downcase
-    if inputted == "y" || "Y"
+    if inputted == "y" || inputted == "Y"
       list_cities
-    elsif inputted == "n" || "N"
+    elsif inputted == "n" || inputted == "N" # ISSUE prints "please enter # of city" still need to input = quit to exit
       goodbye
     else 
       puts "I don't understand your answer."
