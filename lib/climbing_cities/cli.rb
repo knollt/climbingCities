@@ -4,7 +4,6 @@ class ClimbingCities::CLI
   def call
     list_cities
     menu
-    goodbye
   end   
   
   
@@ -17,9 +16,9 @@ class ClimbingCities::CLI
     puts "List of Cities:"
     # produce list of cities
     @city = ClimbingCities::Scraper.today
-    
-    
-    
+    @city.each.with_index(1) do |city, i|
+      puts "#{i}. #{city.name}"
+    end   
   end 
   
   # print city information
@@ -30,25 +29,18 @@ class ClimbingCities::CLI
       puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter or type list to see the list of cities again or type exit."
       puts " "
       input = gets.strip.downcase  #get user input
-        case input 
-          when if input.to_i > 0 && input.to_i < 18
-            city = @city[input.to_i-1]
-              puts " "
-              puts " 1234"
-              puts " "
-              # case city
-              #   when "1"
-              #     puts "1. Turkey climb"
-              #   when "2"
-              #     puts "2. Oregon boulders"
-              # end   
+          
+          if input.to_i > 0 && input.to_i < 18
+            puts @city[input.to_i-1]
+              # puts " "
+              # puts " 1234"
+              # puts " "
             submenu
-          elsif input == "list"
+        elsif input == "list"
             list_cities
-          else input == "exit"
-            # goodbye
-          end   
-        end  
+        else input == "exit"
+            goodbye
+        end   
     end    
   end   
   
@@ -62,7 +54,8 @@ class ClimbingCities::CLI
     if inputted == "y" || inputted == "Y"
       list_cities
     elsif inputted == "n" || inputted == "N" # ISSUE prints "please enter # of city" still need to input = exit to exit
-      goodbye
+      # goodbye
+      puts "Thanks, please type exit."
     else 
       puts "I don't understand your answer."
       submenu
