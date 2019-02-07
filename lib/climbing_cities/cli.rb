@@ -4,6 +4,7 @@ class ClimbingCities::CLI
   def call
     list_cities
     menu
+    # goodbye
   end   
   
   
@@ -29,22 +30,24 @@ class ClimbingCities::CLI
       puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter or list to see the list of cities again or type quit to exit."
       puts " "
       input = gets.strip.downcase  #get user input
-        if input.to_i > 0 && input.to_i < 18
-          city = @city[input.to_i-1]
-            puts " "
-            puts " 1234"
-            puts " "
-            # case city
-            #   when "1"
-            #     puts "1. Turkey climb"
-            #   when "2"
-            #     puts "2. Oregon boulders"
-            # end   
-          submenu
-        elsif input == "list"
-          list_cities
-        else input == "quit"
-          goodbye
+        case input 
+          when if input.to_i > 0 && input.to_i < 18
+            city = @city[input.to_i-1]
+              puts " "
+              puts " 1234"
+              puts " "
+              # case city
+              #   when "1"
+              #     puts "1. Turkey climb"
+              #   when "2"
+              #     puts "2. Oregon boulders"
+              # end   
+            submenu
+          elsif input == "list"
+            list_cities
+          else input == "quit"
+            goodbye
+          end   
         end  
     end    
   end   
