@@ -13,6 +13,7 @@ class ClimbingCities::CLI
     puts "Welcome climbing enthusiast."
     puts "Where would you like to explore today?"
     puts " "
+    puts "List of Cities:"
     # produce list of cities
     @city = ClimbingCities::Scraper.today
     
@@ -28,9 +29,9 @@ class ClimbingCities::CLI
       puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter or list to see the list of cities again or type quit to exit."
       puts " "
       input = gets.strip.downcase  #get user input
-        if input.to_i > 0 && input.to_i < 18
+        if input.to_i 
           # city = city info.
-          puts " "
+          puts " 1234"
           # add any other information
           submenu
         elsif input == "list"
