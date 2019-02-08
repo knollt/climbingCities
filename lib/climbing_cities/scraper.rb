@@ -9,26 +9,21 @@ attr_accessor :name, :desc
   end   
   
   # create new city objects from scraped data 
-  def self.scrape_matador
-    # city_1 = self.new
-    # city_1.name = "Turkey"
-    # city_1.desc = "Great climbing routes."
-    
-    # city_2 = self.new
-    # city_2.name = "Oregon"
-    # city_2.desc = "Great boulding climbing."
-    
-    # [city_1, city_2]
-    
+  def self.scrape_cities
     cities = [] 
-    # site = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-    site = Nokogiri::HTML(open(url))
-    binding.pry
-    # city = site.css("h2").text
-    # city.each do |city|
-    #   binding.pry
-    # end  
+    cities << self.scrape_matador
+    cities 
+  end
+  
+  
+  def self.scrape_matador
+    doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
+    name = doc.search("h2").text
+    desc = doc.search("p").text 
   end 
+  
+  
+  
   
 end   
 
