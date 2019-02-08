@@ -18,8 +18,12 @@ attr_accessor :name, :desc
   
   def self.scrape_matador
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-    name = doc.search("h2").text
-    desc = doc.search("p").text 
+    
+    city.new 
+    city.name = doc.search("h2").text
+    city.desc = doc.search("p").text 
+    
+    city
   end 
   
   
