@@ -32,9 +32,6 @@ class ClimbingCities::CLI
           
           if input.to_i > 0 && input.to_i < 18
             puts @city[input.to_i-1]
-              # puts " "
-              # puts " 1234"
-              # puts " "
             submenu
         elsif input == "list"
             list_cities

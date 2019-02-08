@@ -5,30 +5,30 @@ attr_accessor :name, :desc
   # initiate the scrape  
   def self.today
     # should return bunch of instances of cities
-
-    city_1 = self.new
-    city_1.name = "Turkey"
-    city_1.desc = "Great climbing routes."
-    
-    city_2 = self.new
-    city_2.name = "Oregon"
-    city_2.desc = "Great boulding climbing."
-    
-    [city_1, city_2]
-    
-    # self.scrape_matador
+    self.scrape_matador
   end   
   
   # create new city objects from scraped data 
-  # def self.scrape_matador(url)
-  #   # site = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-  #   site = Nokogiri::HTML(open(url))
-  #   binding.pry
-  #   # city = site.css("h2").text
-  #   # city.each do |city|
-  #   #   binding.pry
-  #   # end  
-  # end 
+  def self.scrape_matador
+    # city_1 = self.new
+    # city_1.name = "Turkey"
+    # city_1.desc = "Great climbing routes."
+    
+    # city_2 = self.new
+    # city_2.name = "Oregon"
+    # city_2.desc = "Great boulding climbing."
+    
+    # [city_1, city_2]
+    
+    cities = [] 
+    # site = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
+    site = Nokogiri::HTML(open(url))
+    binding.pry
+    # city = site.css("h2").text
+    # city.each do |city|
+    #   binding.pry
+    # end  
+  end 
   
 end   
 
