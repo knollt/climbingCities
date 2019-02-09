@@ -2,6 +2,10 @@ class ClimbingCities::Scraper
 
 attr_accessor :name, :desc
   
+  def initialize 
+    @cities = []
+  end   
+  
   # initiate the scrape  
   def self.today
     # should return bunch of instances of cities
@@ -10,20 +14,27 @@ attr_accessor :name, :desc
   
   # create new city objects from scraped data 
   def self.scrape_cities
-    cities = [] 
-    cities << self.scrape_matador
-    cities 
+    # @cities = [] 
+    @cities << self.scrape_matador
+    @cities 
   end
   
   
   def self.scrape_matador
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
+     
+    cities = self.new 
+    cities.name = doc.search("h2").text
+    cities.desc = doc.search("p").text 
     
-    city.new 
-    city.name = doc.search("h2").text
-    city.desc = doc.search("p").text 
+    cities.each {|c| @cities << c.text.strip}
     
-    city
+    @cities.each do |city|
+      i = @cities.index(city)
+      puts "#{i}.text. #{city.name}"
+    end   
+    
+    cities
   end 
   
   

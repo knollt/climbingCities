@@ -16,9 +16,10 @@ class ClimbingCities::CLI
     puts "List of Cities:"
     # produce list of cities
     @city = ClimbingCities::Scraper.today
-    @city.each.with_index(1) do |city, i|
-      puts "#{i}. #{city.name}"
-    end   
+  
+    # @city.each.with_index(1) do |city, i|
+    #   puts "#{i}. #{city.name}"
+    # end   
   end 
   
   # print city information
