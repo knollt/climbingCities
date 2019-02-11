@@ -18,7 +18,7 @@ class ClimbingCities::CLI
     @city = ClimbingCities::Scraper.cities
   
     @city.each.with_index(1) do |city, i|
-      binding.pry 
+      # binding.pry 
       puts "#{i}. #{city.name}"
     end   
   end 

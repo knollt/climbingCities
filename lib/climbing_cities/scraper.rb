@@ -25,7 +25,6 @@ attr_accessor :name, :desc
      
     cities = self.new 
     cities.name = doc.search("h2").text
-    cities.desc = doc.search("p").text 
     
     # cities.each {|c| @cities << c.text.strip}
     
@@ -33,6 +32,13 @@ attr_accessor :name, :desc
     #   i = @cities.index(city)
     #   puts "#{i}.text. #{city.name}"
     # end   
+    
+    cities.desc = doc.search("p").text 
+    
+    
+    
+  
+
     
     cities
   end 
