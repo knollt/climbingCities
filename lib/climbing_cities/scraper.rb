@@ -2,9 +2,9 @@ class ClimbingCities::Scraper
 
 attr_accessor :name, :desc
   
-  def initialize 
-    @cities = []
-  end   
+  # def initialize 
+  #   @cities = []
+  # end   
   
   # initiate the scrape  
   def self.today
@@ -13,8 +13,8 @@ attr_accessor :name, :desc
   end   
   
   # create new city objects from scraped data 
-  def self.scrape_cities
-    # @cities = [] 
+  def self.cities
+    @cities = [] 
     @cities << self.scrape_matador
     @cities 
   end
@@ -27,12 +27,12 @@ attr_accessor :name, :desc
     cities.name = doc.search("h2").text
     cities.desc = doc.search("p").text 
     
-    cities.each {|c| @cities << c.text.strip}
+    # cities.each {|c| @cities << c.text.strip}
     
-    @cities.each do |city|
-      i = @cities.index(city)
-      puts "#{i}.text. #{city.name}"
-    end   
+    # @cities.each do |city|
+    #   i = @cities.index(city)
+    #   puts "#{i}.text. #{city.name}"
+    # end   
     
     cities
   end 

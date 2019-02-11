@@ -15,11 +15,12 @@ class ClimbingCities::CLI
     puts " "
     puts "List of Cities:"
     # produce list of cities
-    @city = ClimbingCities::Scraper.today
+    @city = ClimbingCities::Scraper.cities
   
-    # @city.each.with_index(1) do |city, i|
-    #   puts "#{i}. #{city.name}"
-    # end   
+    @city.each.with_index(1) do |city, i|
+      binding.pry 
+      puts "#{i}. #{city.name}"
+    end   
   end 
   
   # print city information
@@ -33,6 +34,7 @@ class ClimbingCities::CLI
           
           if input.to_i > 0 && input.to_i < 18
             puts @city[input.to_i-1]
+            # binding.pry 
             submenu
         elsif input == "list"
             list_cities

@@ -1,7 +1,7 @@
 class ClimbingCities::Cities
   
   # create reader/writer methods/attributes or properties for each climbing city 
-  attr_accessor :name, :location
+  attr_accessor :name, :desc
   
   
   @@all = []
@@ -10,7 +10,7 @@ class ClimbingCities::Cities
   # initialize a city instance with properties and add to @@all array
   def initialize (name, location)
     @name = name
-    @location = location
+    @desc = desc
     @@all << self 
   end
   
