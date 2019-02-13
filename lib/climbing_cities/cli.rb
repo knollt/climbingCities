@@ -17,19 +17,11 @@ class ClimbingCities::CLI
     # produce list of cities
     
     # not pulling global all variable - correct?
-    @city = ClimbingCities::Cities.all
-    @city.each.with_index(1) do |city, i|
+    @cities = ClimbingCities::Cities.all
+    @cities.each.with_index(1) do |city, i|
       binding.pry 
       # puts "#{i}. #{city.name}"
     end 
-    
-    
-    # @city = ClimbingCities::Scraper.cities
-  
-    # @city.each.with_index(1) do |city, i|
-    #   binding.pry 
-    #   # puts "#{i}. #{city.name}"
-    # end   
   end 
   
   # print city information

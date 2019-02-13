@@ -26,12 +26,18 @@ attr_accessor :name, :desc
   def self.scrape_matador
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
     # binding.pry 
-    cities = self.new 
+    
+    # cities = self.new 
     
     # not separating each index data?
-    cities.name = doc.search("h2").text
-    cities.desc = doc.search("p").text 
-    cities
+    doc.search("div.post-content h2").each do |city|
+     
+      ClimbingCities::Cities.new(city.text)
+    end
+    
+    
+    # cities.desc = doc.search("p").text 
+    # cities
   end 
   
   
