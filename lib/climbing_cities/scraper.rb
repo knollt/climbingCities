@@ -6,43 +6,31 @@ attr_accessor :name, :desc
   def self.today
     # should return bunch of instances of cities
     self.scrape_matador
+    binding.pry 
   end   
   
   # create new city objects from scraped data 
-  def self.cities
-    @cities = [] 
-    @cities << self.scrape_matador
-    @cities 
-  end
-  
-  # push data to global variable all?
-  # def cities 
-  #   self.all.map do |city|
-  #     binding.pry 
-  #     city.cities 
-  #   end  
-  # end  
+  # def self.cities
+  #   @cities = [] 
+  #   @cities << self.scrape_matador
+  #   binding.pry 
+  #   @cities 
+  # end
   
   def self.scrape_matador
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-    # binding.pry 
-    
-    # cities = self.new 
-    
-    # not separating each index data?
+  
     doc.search("div.post-content h2").each do |city|
-     
+      # binding.pry
       ClimbingCities::Cities.new(city.text)
     end
+    # binding.pry 
     
-    
-    # cities.desc = doc.search("p").text 
-    # cities
+    # doc.search("p").each.with_index(1) do |link| 
+    #   binding.pry
+    #   # link.text 
+    # end 
   end 
-  
-  
-  
-  
 end   
 
       # case i 

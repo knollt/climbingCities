@@ -19,10 +19,22 @@ class ClimbingCities::CLI
     # not pulling global all variable - correct?
     @cities = ClimbingCities::Cities.all
     @cities.each.with_index(1) do |city, i|
-      binding.pry 
-      # puts "#{i}. #{city.name}"
+      # binding.pry 
+      print "#{i}. #{city.text}"
+      puts " "
     end 
+    
+    # @cities = ClimbingCities::Scraper.cities
+    # @cities.each.with_index(1) do |city, i|
+    #   binding.pry 
+    #   # print "#{i}. #{city.text}"
+    #   # puts " "
+    # end 
   end 
+  
+  
+  
+  
   
   # print city information
   def menu
@@ -34,7 +46,7 @@ class ClimbingCities::CLI
       input = gets.strip.downcase  #get user input
           
           if input.to_i > 0 && input.to_i < 18
-            puts @city[input.to_i-1]
+            puts @cities[input.to_i-1]
             # binding.pry 
             submenu
         elsif input == "list"
