@@ -8,7 +8,7 @@ class ClimbingCities::Cities
   
   
   # initialize a city instance with properties and add to @@all array
-  def initialize (name, location)
+  def initialize (name, desc)
     @name = name
     @desc = desc
     @@all << self 
@@ -18,5 +18,6 @@ class ClimbingCities::Cities
   def self.all
     @@all  
   end 
+  
   
 end   

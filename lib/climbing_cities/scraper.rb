@@ -15,11 +15,20 @@ attr_accessor :name, :desc
     @cities 
   end
   
+  # push data to global variable all?
+  # def cities 
+  #   self.all.map do |city|
+  #     binding.pry 
+  #     city.cities 
+  #   end  
+  # end  
   
   def self.scrape_matador
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
     # binding.pry 
     cities = self.new 
+    
+    # not separating each index data?
     cities.name = doc.search("h2").text
     cities.desc = doc.search("p").text 
     cities
