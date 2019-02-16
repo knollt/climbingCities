@@ -4,18 +4,8 @@ attr_accessor :name, :desc
   
   # initiate the scrape  
   def self.today
-    # should return bunch of instances of cities
     self.scrape_matador
-    # binding.pry 
   end   
-  
-  # create new city objects from scraped data 
-  # def self.cities
-  #   @cities = [] 
-  #   @cities << self.scrape_matador
-  #   # binding.pry 
-  #   @cities 
-  # end
   
   def self.scrape_matador
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
@@ -26,12 +16,14 @@ attr_accessor :name, :desc
     # binding.pry 
   end 
   
-  def self.scrape_city_desc
+  def self.scrape_city_desc 
+    # not working yet 
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-    doc.search("p").text
-      
-    
+    doc.search("p").each do |desc|
+      desc.text
+    end   
   end 
+  
 end   
 
       # case i 

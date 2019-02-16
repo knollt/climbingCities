@@ -15,13 +15,8 @@ class ClimbingCities::CLI
     puts "Where would you like to explore today?"
     puts " "
     puts "List of Cities:"
-    # produce list of cities
     list_cities
   end 
-  
-  
-  
-  
   
   # print city information
   def menu
@@ -33,14 +28,17 @@ class ClimbingCities::CLI
       input = gets.strip.downcase  #get user input
           
           if input.to_i > 0 && input.to_i < 18
-            puts "missing cities 1-17"
-            # city_desc
-            # binding.pry 
+            
+            city_desc
+           
             submenu
         elsif input == "list"
             list_cities
-        else input == "exit"
+        elsif input == "exit"
             goodbye
+        else 
+          puts "Entry Invalid"
+          menu 
         end   
     end    
   end   
@@ -53,7 +51,7 @@ class ClimbingCities::CLI
     puts " "
     inputted = gets.strip.downcase
     if inputted == "y" || inputted == "Y"
-      list_cities
+      menu
     elsif inputted == "n" || inputted == "N" # ISSUE prints "please enter # of city" still need to input = exit to exit
       # goodbye
       puts "Thanks, please type exit."
@@ -78,8 +76,8 @@ class ClimbingCities::CLI
     end 
   end 
   
-  # def city_desc
-  #   ClimbingCities::Scraper.scrape_city_desc
-  # end   
+  def city_desc
+    ClimbingCities::Scraper.scrape_city_desc
+  end   
   
 end  
