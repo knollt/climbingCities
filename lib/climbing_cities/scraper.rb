@@ -6,7 +6,7 @@ attr_accessor :name, :desc
   def self.today
     # should return bunch of instances of cities
     self.scrape_matador
-    binding.pry 
+    # binding.pry 
   end   
   
   # create new city objects from scraped data 

@@ -2,6 +2,7 @@ class ClimbingCities::CLI
   
   # start a new CLI session 
   def call
+    ClimbingCities::Scraper.today
     greeting
     menu
   end   
@@ -32,8 +33,8 @@ class ClimbingCities::CLI
       input = gets.strip.downcase  #get user input
           
           if input.to_i > 0 && input.to_i < 18
-            # puts "missing cities 1-17"
-            city_desc
+            puts "missing cities 1-17"
+            # city_desc
             # binding.pry 
             submenu
         elsif input == "list"
@@ -71,9 +72,7 @@ class ClimbingCities::CLI
   
   
   def list_cities
-  # not pulling global all variable - correct?
     ClimbingCities::Cities.all.each.with_index(1) do |city, i|
-      # binding.pry 
       print "#{i}. #{city.name}"
       puts " "
     end 
