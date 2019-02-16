@@ -2,34 +2,20 @@ class ClimbingCities::CLI
   
   # start a new CLI session 
   def call
-    list_cities
+    greeting
     menu
   end   
   
   
-  #list climbing cities 
-  def list_cities
+  #greet user and list climbing cities 
+  def greeting
     puts " "
     puts "Welcome climbing enthusiast."
     puts "Where would you like to explore today?"
     puts " "
     puts "List of Cities:"
     # produce list of cities
-    
-    # not pulling global all variable - correct?
-    @cities = ClimbingCities::Cities.all
-    @cities.each.with_index(1) do |city, i|
-      # binding.pry 
-      print "#{i}. #{city.text}"
-      puts " "
-    end 
-    
-    # @cities = ClimbingCities::Scraper.cities
-    # @cities.each.with_index(1) do |city, i|
-    #   binding.pry 
-    #   # print "#{i}. #{city.text}"
-    #   # puts " "
-    # end 
+    list_cities
   end 
   
   
@@ -82,5 +68,15 @@ class ClimbingCities::CLI
     puts " "
   end   
   
-     
+  
+  def list_cities
+  # not pulling global all variable - correct?
+    @cities = ClimbingCities::Cities.all
+    @cities.each.with_index(1) do |city, i|
+      # binding.pry 
+      print "#{i}. #{city.name}"
+      puts " "
+    end 
+  end 
+  
 end  
