@@ -13,23 +13,24 @@ attr_accessor :name, :desc
   # def self.cities
   #   @cities = [] 
   #   @cities << self.scrape_matador
-  #   binding.pry 
+  #   # binding.pry 
   #   @cities 
   # end
   
   def self.scrape_matador
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-  
     doc.search("div.post-content h2").each do |city|
       # binding.pry
       ClimbingCities::Cities.new(city.text)
     end
     # binding.pry 
+  end 
+  
+  def self.scrape_city_desc
+    doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
+    doc.search("p").text
+      
     
-    # doc.search("p").each.with_index(1) do |link| 
-    #   binding.pry
-    #   # link.text 
-    # end 
   end 
 end   
 

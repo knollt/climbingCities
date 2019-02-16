@@ -32,7 +32,8 @@ class ClimbingCities::CLI
       input = gets.strip.downcase  #get user input
           
           if input.to_i > 0 && input.to_i < 18
-            puts @cities[input.to_i-1]
+            # puts "missing cities 1-17"
+            city_desc
             # binding.pry 
             submenu
         elsif input == "list"
@@ -71,12 +72,15 @@ class ClimbingCities::CLI
   
   def list_cities
   # not pulling global all variable - correct?
-    @cities = ClimbingCities::Cities.all
-    @cities.each.with_index(1) do |city, i|
+    ClimbingCities::Cities.all.each.with_index(1) do |city, i|
       # binding.pry 
       print "#{i}. #{city.name}"
       puts " "
     end 
   end 
+  
+  # def city_desc
+  #   ClimbingCities::Scraper.scrape_city_desc
+  # end   
   
 end  
