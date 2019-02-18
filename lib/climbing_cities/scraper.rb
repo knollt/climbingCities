@@ -20,7 +20,8 @@ attr_accessor :name, :desc
     # not working yet 
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
     doc.search("p").each do |desc|
-      desc.text
+      binding.pry 
+      # desc.text
     end   
   end 
   
@@ -50,17 +51,17 @@ end
       # when i == 10
       #   city[22] # Vegas
       # when i == 11
-      #   city[12] 
+      #   city[24] # New York 
       # when i == 12
-      #   city[13] 
+      #   city[26] # Australia
       # when i == 13
-      #   city[14] 
+      #   city[28] # Pentiction, BC
       # when i == 14
-      #   city[15] 
+      #   city[30] # Thailand 
       # when i == 15
-      #   city[16]
+      #   city[32] # Kentucky
       # when i == 16
-      #   city[17] 
+      #   city[34] # England
       # else 
       #   puts "Invalid number. Please enter 1-17."
       # end   
