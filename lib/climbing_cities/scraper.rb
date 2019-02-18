@@ -30,25 +30,25 @@ end
       # when i == 0 
       #   city[1] # Turkey
       # when i == 1
-      #   city[2]
+      #   city[3] # Bend
       # when i == 2
-      #   city[3]  
+      #   city[5]  # Sqaumish
       # when i == 3
-      #   city[4]
+      #   city[7] # Greece
       # when i == 4
-      #   city[5]
+      #   city[9] # Cali
       # when i == 5 
-      #   city[6]         
+      #   city[11]  # China       
       # when i == 6 
-      #   city[7] 
+      #   city[13] # Nelson, BC
       # when i == 7 
-      #   city[8] 
+      #   city[15] # New Hampshire
       # when i == 8
-      #   city[9] 
+      #   city[17] # Utah
       # when i == 9
-      #   city[10] 
+      #   city[20]  # Paris
       # when i == 10
-      #   city[11] 
+      #   city[22] # Vegas
       # when i == 11
       #   city[12] 
       # when i == 12
