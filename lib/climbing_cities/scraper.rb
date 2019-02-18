@@ -19,9 +19,20 @@ attr_accessor :name, :desc
   def self.scrape_city_desc 
     # not working yet 
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-    doc.search("p").each do |desc|
-      binding.pry 
-      # desc.text
+    # doc.search("p").each do |desc|
+    #   binding.pry 
+    #   # desc.text
+    # end 
+    
+    def desc
+      case i 
+        when i == 0 
+          doc.search("p")[1].text
+        when i == 1 
+          doc.search("p")[3].text
+        else 
+          puts "Invalid #####"
+        end   
     end   
   end 
   
