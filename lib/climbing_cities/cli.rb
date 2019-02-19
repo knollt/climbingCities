@@ -23,15 +23,12 @@ class ClimbingCities::CLI
     input = nil
     while input != "exit"
       puts " "
-      puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter or type list to see the list of cities again or type exit."
+      puts "Would you like to learn more about the city?  If yes, please type yes and hit enter.  If you would like to see to the list of cites again, please type list.  Otherwise, type exit."
       puts " "
       input = gets.strip.downcase  #get user input
           
-          if input.to_i > 0 && input.to_i < 18
-            
-            city_desc
-           
-            submenu
+        if input == "yes"
+            choose_city
         elsif input == "list"
             list_cities
         elsif input == "exit"
@@ -68,6 +65,19 @@ class ClimbingCities::CLI
     puts " "
   end   
   
+  def choose_city
+    puts " "
+    puts "Please enter the number of the city you would like to learn more about 1-17 and hit enter."
+    puts " "
+    
+    input = gets.strip.to_i 
+    if input.between?(1,17)
+      category = input-1
+      display_city_desc (category)
+      submenu
+    end 
+  end 
+ 
   
   def list_cities
     ClimbingCities::Cities.all.each.with_index(1) do |city, i|
@@ -76,7 +86,7 @@ class ClimbingCities::CLI
     end 
   end 
   
-  def city_desc
+  def display_city_desc (category)
     ClimbingCities::Scraper.scrape_city_desc
   end   
   

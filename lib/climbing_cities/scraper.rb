@@ -16,14 +16,11 @@ attr_accessor :name, :desc
     # binding.pry 
   end 
   
-  def self.scrape_city_desc 
+  def self.scrape_city_desc (category)
     # not working yet 
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
     doc.search("p").each do |i|
       # binding.pry
-    
-    # i = gets.strip.downcase.to_i 
-    
       case i 
         when i == 0 
           doc.search("p")[1].text
