@@ -5,6 +5,7 @@ attr_accessor :name, :desc
   # initiate the scrape  
   def self.today
     self.scrape_matador
+    self.category_city_desc
   end   
   
   def self.scrape_matador
@@ -33,7 +34,7 @@ attr_accessor :name, :desc
   #       end   
   #   end 
   
-    def category_city_desc
+    def self.category_city_desc
       doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
 
       doc.search("p").each do |i|
