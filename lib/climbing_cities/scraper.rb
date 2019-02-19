@@ -16,23 +16,33 @@ attr_accessor :name, :desc
     # binding.pry 
   end 
   
-  def self.scrape_city_desc (category)
-    # not working yet 
+  # def self.scrape_city_desc (category)
+  #   # not working yet 
    
-    doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
+  #   doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
 
-    doc.search("p").each.with_index do |c, i|
+  #   doc.search("p").each do |i|
+  #     # binding.pry
+  #     case i 
+  #       when i == 0 
+  #         doc.search("p")[1].text
+  #       when i == 1 
+  #         doc.search("p")[3].text
+  #       else 
+  #         puts "Invalid #####"
+  #       end   
+  #   end 
+  
+    def category_city_desc
+      doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
+
+      doc.search("p").each do |i|
       # binding.pry
-      case i 
-        when i == 0 
-          c.search("p")[1].text
-        when i == 1 
-          c.search("p")[3].text
-        else 
-          puts "Invalid #####"
-        end   
+        ClimbingCities::Desc.new(i)
+      end
+      binding.pry 
     end   
-  end 
+   
   
 end   
 
