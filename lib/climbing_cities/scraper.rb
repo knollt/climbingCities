@@ -18,14 +18,16 @@ attr_accessor :name, :desc
   
   def self.scrape_city_desc (category)
     # not working yet 
+   
     doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-    doc.search("p").each do |i|
+
+    doc.search("p").each.with_index do |c, i|
       # binding.pry
       case i 
         when i == 0 
-          doc.search("p")[1].text
+          c.search("p")[1].text
         when i == 1 
-          doc.search("p")[3].text
+          c.search("p")[3].text
         else 
           puts "Invalid #####"
         end   

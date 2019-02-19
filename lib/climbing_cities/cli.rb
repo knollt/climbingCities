@@ -47,12 +47,14 @@ class ClimbingCities::CLI
     puts " "
     
     input = gets.strip.to_i 
+    
     if input.between?(1,17)
       category = input-1
       display_city_desc (category)
       submenu
     else
       puts "Invalid number."
+      list_cities
       choose_city
     end 
   end 
