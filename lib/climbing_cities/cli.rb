@@ -93,7 +93,7 @@ class ClimbingCities::CLI
   end 
   
   def display_city_desc (category)
-    # ClimbingCities::Scraper.scrape_city_desc(category)
+    ClimbingCities::Scraper.scrape_city_desc(category)
     # ClimbingCities::Desc.all.each do |c|
       # binding.pry
     # end   
