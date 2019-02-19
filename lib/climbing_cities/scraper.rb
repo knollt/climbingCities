@@ -5,7 +5,6 @@ attr_accessor :name, :desc
   # initiate the scrape  
   def self.today
     self.scrape_matador
-    self.category_city_desc
   end   
   
   def self.scrape_matador
@@ -17,32 +16,32 @@ attr_accessor :name, :desc
     # binding.pry 
   end 
   
-  # def self.scrape_city_desc (category)
-  #   # not working yet 
+  def self.scrape_city_desc (category)
+    # not working yet 
    
-  #   doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
+    doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
 
-  #   doc.search("p").each do |i|
-  #     # binding.pry
-  #     case i 
-  #       when i == 0 
-  #         doc.search("p")[1].text
-  #       when i == 1 
-  #         doc.search("p")[3].text
-  #       else 
-  #         puts "Invalid #####"
-  #       end   
-  #   end 
-  
-    def self.category_city_desc
-      doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
-
-      doc.search("p").each do |i|
+    doc.search("p").each do |i|
       # binding.pry
-        ClimbingCities::Desc.new(i)
-      end
-      binding.pry 
-    end   
+      case i 
+        when 0
+          doc.search("p")[1].text
+        when 1 
+          doc.search("p")[3].text
+        else 
+          puts "Invalid #####"
+        end   
+      end 
+    end 
+    # def self.category_city_desc
+    #   doc = Nokogiri::HTML(open("https://matadornetwork.com/sports/17-worlds-best-cities-rock-climbers/"))
+
+    #   doc.search("p").each do |i|
+    #   # binding.pry
+    #     ClimbingCities::Desc.new(i)
+    #   end
+    #   # binding.pry 
+    # end   
    
   
 end   
